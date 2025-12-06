@@ -1,0 +1,185 @@
+{
+  "lockfile_version": "1",
+  "packages": {
+    "binutils@latest": {
+      "last_modified": "2025-11-23T21:50:36Z",
+      "resolved": "github:NixOS/nixpkgs/ee09932cedcef15aaf476f9343d1dea2cb77e261#binutils",
+      "source": "devbox-search",
+      "version": "2.44",
+      "systems": {
+        "aarch64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/0hz32dza8cmfq4i823mcz4kqpk54bils-binutils-wrapper-2.44",
+              "default": true
+            },
+            {
+              "name": "man",
+              "path": "/nix/store/16cprzg9s7bw501rppw2bcmf3wpwsxw8-binutils-wrapper-2.44-man",
+              "default": true
+            },
+            {
+              "name": "info",
+              "path": "/nix/store/y9kanlp4jzfzwjriga6jplw8jk9hx5dk-binutils-wrapper-2.44-info"
+            }
+          ],
+          "store_path": "/nix/store/0hz32dza8cmfq4i823mcz4kqpk54bils-binutils-wrapper-2.44"
+        },
+        "aarch64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/fhmb82a3q7nbsz3w9yj28nyscykrj87p-binutils-wrapper-2.44",
+              "default": true
+            },
+            {
+              "name": "man",
+              "path": "/nix/store/136rg4hbbzzgfk9fzpih43wnsb7k04q5-binutils-wrapper-2.44-man",
+              "default": true
+            },
+            {
+              "name": "info",
+              "path": "/nix/store/glmqwm69w9b7wdil3iqncr1ach6py0zh-binutils-wrapper-2.44-info"
+            }
+          ],
+          "store_path": "/nix/store/fhmb82a3q7nbsz3w9yj28nyscykrj87p-binutils-wrapper-2.44"
+        },
+        "x86_64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/jprgd6iai892g6dhajv9k9izxwin5g74-binutils-wrapper-2.44",
+              "default": true
+            },
+            {
+              "name": "man",
+              "path": "/nix/store/g4xhkh8nh9c61xfd428a96c5j97gzyd1-binutils-wrapper-2.44-man",
+              "default": true
+            },
+            {
+              "name": "info",
+              "path": "/nix/store/75plj78svg9ala98s5cvk8dma4bd7syn-binutils-wrapper-2.44-info"
+            }
+          ],
+          "store_path": "/nix/store/jprgd6iai892g6dhajv9k9izxwin5g74-binutils-wrapper-2.44"
+        },
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/xwydcyvlsa3cvssk0y5llgdhlhjvmqdm-binutils-wrapper-2.44",
+              "default": true
+            },
+            {
+              "name": "man",
+              "path": "/nix/store/2gjcdfkx83vgaszic2vn2cnsfl5n1mzk-binutils-wrapper-2.44-man",
+              "default": true
+            },
+            {
+              "name": "info",
+              "path": "/nix/store/5c4dylia9lsg6qbp3a9rdvv9nr0xp3jz-binutils-wrapper-2.44-info"
+            }
+          ],
+          "store_path": "/nix/store/xwydcyvlsa3cvssk0y5llgdhlhjvmqdm-binutils-wrapper-2.44"
+        }
+      }
+    },
+    "github:NixOS/nixpkgs/nixpkgs-unstable": {
+      "last_modified": "2025-12-05T15:03:55Z",
+      "resolved": "github:NixOS/nixpkgs/a672be65651c80d3f592a89b3945466584a22069?lastModified=1764947035&narHash=sha256-EYHSjVM4Ox4lvCXUMiKKs2vETUSL5mx%2BJ2FfutM7T9w%3D"
+    },
+    "jdk@latest": {
+      "last_modified": "2025-10-22T20:59:19Z",
+      "resolved": "github:NixOS/nixpkgs/01b6809f7f9d1183a2b3e081f0a1e6f8f415cb09#jdk8",
+      "source": "devbox-search",
+      "version": "8u462-b08",
+      "systems": {
+        "aarch64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/idp53w87pn9034h0b68awnlc9shivzhk-openjdk-8u462-b08",
+              "default": true
+            },
+            {
+              "name": "debug",
+              "path": "/nix/store/rhcz737cn17p57wh0wk4yqymw6zq47hp-openjdk-8u462-b08-debug"
+            },
+            {
+              "name": "jre",
+              "path": "/nix/store/74j8f70zx32avncnv4sv6qm8azmhff97-openjdk-8u462-b08-jre"
+            }
+          ],
+          "store_path": "/nix/store/idp53w87pn9034h0b68awnlc9shivzhk-openjdk-8u462-b08"
+        },
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/g0vld0dg3dn5666ysjlh8i38qfhx2ndq-openjdk-8u462-b08",
+              "default": true
+            },
+            {
+              "name": "debug",
+              "path": "/nix/store/wb839j89598cdl5ygqqh9r9lgcbcivgm-openjdk-8u462-b08-debug"
+            },
+            {
+              "name": "jre",
+              "path": "/nix/store/py8pqmb01c1qs5779b7lf8r9wrnf0mgb-openjdk-8u462-b08-jre"
+            }
+          ],
+          "store_path": "/nix/store/g0vld0dg3dn5666ysjlh8i38qfhx2ndq-openjdk-8u462-b08"
+        }
+      }
+    },
+    "maven@latest": {
+      "last_modified": "2025-11-23T21:50:36Z",
+      "resolved": "github:NixOS/nixpkgs/ee09932cedcef15aaf476f9343d1dea2cb77e261#maven",
+      "source": "devbox-search",
+      "version": "3.9.11",
+      "systems": {
+        "aarch64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/xqja439g5mrggz87a4f4hp9rdwjmkwj4-maven-3.9.11",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/xqja439g5mrggz87a4f4hp9rdwjmkwj4-maven-3.9.11"
+        },
+        "aarch64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/sjhc4f9kvcr9vz3skyl3dvhir2dby2f1-maven-3.9.11",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/sjhc4f9kvcr9vz3skyl3dvhir2dby2f1-maven-3.9.11"
+        },
+        "x86_64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/90qdbpmykzmgxm2df56axf8lxh1bdv5k-maven-3.9.11",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/90qdbpmykzmgxm2df56axf8lxh1bdv5k-maven-3.9.11"
+        },
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/4djac4688b16msvhkmyp217ad9kc1m5s-maven-3.9.11",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/4djac4688b16msvhkmyp217ad9kc1m5s-maven-3.9.11"
+        }
+      }
+    }
+  }
+}
