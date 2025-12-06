@@ -13,73 +13,9 @@ devbox shell
 > [!CAUTION]
 > You have to install `docker` because devbox.json doesn't include it.
 
-### 2. Kafkaの起動（Docker Compose使用）
-
-このプロジェクトではKafka 4.1の最新KRaft（Kafka Raft）モードを使用します。
-ZooKeeperは不要で、Kafka単体で動作します。
-
-```bash
-docker compose up -d
-```
-
-起動後、以下のサービスが利用可能になります：
-- Kafka: `localhost:9092` （KRaftモード）
-
-### 3. Kafkaトピックの作成
-
-Flinkアプリケーション用のトピックを作成します：
-
-```bash
-# Kafkaコンテナに入る（最新のKRaftモード）
-docker exec --workdir /opt/kafka/bin/ -it kafka sh
-
-# 入力用トピック作成
-./kafka-topics.sh --bootstrap-server localhost:9092 --create --topic raw-features --partitions 1 --replication-factor 1
-
-# トピック一覧の確認
-./kafka-topics.sh --bootstrap-server localhost:9092 --list
-
-# コンテナから抜ける
-exit
-```
-
-### 4. データ投入のテスト
-
-Kafkaプロデューサーを使ってテストデータを投入できます：
-
-```bash
-# Kafkaコンテナに入る
-docker exec --workdir /opt/kafka/bin/ -it kafka sh
-
-# プロデューサーを起動（手動でデータを入力）
-./kafka-console-producer.sh --bootstrap-server localhost:9092 --topic raw-features
-
-# 以下のデータを一行ずつ入力してEnter
-# user_A,10.0
-# user_B,50.0
-# user_A,12.0
-# user_B,55.0
-# Ctrl + C -> exit
-```
-
-### 5. データ消費のテスト
-
-別のターミナルでコンシューマーを起動してデータを確認：
-
-```bash
-# Kafkaコンテナに入る
-docker exec --workdir /opt/kafka/bin/ -it kafka sh
-
-# Consumer groupを指定してコンシューマーを起動
-./kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic raw-features --group test-consumer-group --from-beginning
-
-# Consumer groupの状態確認
-./kafka-consumer-groups.sh --bootstrap-server localhost:9092 --describe --group test-consumer-group
-```
-
 ## 💻 Flinkアプリケーションの開発
 
-### 6. Mavenプロジェクトの構造
+### 1. Mavenプロジェクトの構造
 
 プロジェクトは以下の構造になっています：
 
@@ -92,7 +28,7 @@ simple-flink-example/
 └── docker-compose.yaml              # Kafka環境設定
 ```
 
-### 7. アプリケーションのビルドと実行
+### 2. アプリケーションのビルドと実行
 
 #### Java/Maven環境の確認
 ```bash
@@ -119,7 +55,7 @@ java -cp target/simple-flink-example-1.0-SNAPSHOT.jar makinzm.simple.flink.Simpl
 
 > **注意**: log4jの警告メッセージが表示されますが、アプリケーションは正常動作しています
 
-### 8. 完全な動作テスト手順
+### 3. 完全な動作テスト手順
 
 #### Step 1: Kafka環境を起動
 ```bash
@@ -163,7 +99,7 @@ User: user_B, Raw Feature: 55.0, Moving Average Feature: 52.50
 User: user_A, Raw Feature: 14.0, Moving Average Feature: 13.00
 ```
 
-### 9. アプリケーションの機能説明
+### 4. アプリケーションの機能説明
 
 - **状態管理**: ユーザー別に前回の特徴量値を保持
 - **キーによる分割**: `keyBy()`でユーザーID別にストリームを分割
