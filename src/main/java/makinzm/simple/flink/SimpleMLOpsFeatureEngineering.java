@@ -41,9 +41,20 @@ public class SimpleMLOpsFeatureEngineering {
             // 入力例: "user_A,10.5" -> Tuple2<String, Double>("user_A", 10.5) にパース
             .map(line -> {
                 String[] parts = line.split(",");
-                return Tuple2.of(parts[0], Double.parseDouble(parts[1]));
+                if (parts.length != 2) {
+                    System.err.println("Invalid data format: " + line + " (expected: user_id,value)");
+                    return null;
+                }
+                try {
+                    return Tuple2.of(parts[0].trim(), Double.parseDouble(parts[1].trim()));
+                } catch (NumberFormatException e) {
+                    System.err.println("Invalid number format: " + parts[1] + " in line: " + line);
+                    return null;
+                }
             })
             .returns(TypeInformation.of(new TypeHint<Tuple2<String, Double>>(){}))
+            // null値をフィルタリング
+            .filter(tuple -> tuple != null)
             // KeyBy: ユーザーID (Tuple2の1番目の要素) でストリームを分割
             .keyBy(tuple -> tuple.f0) 
             // KeyedProcessFunction: キー（ユーザーID）ごとに状態を保持して処理
